@@ -49,7 +49,17 @@ public class Main {
 
     private static void task3() {
         int[] daysInMonth = generateRandomArray();
-        int sum = 0;
-
+        int maxSum = 99_000;
+        int minSum = 200_001;
+        for (int i = 0; i < daysInMonth.length; i++) {
+            if (daysInMonth[i] > maxSum) {
+                maxSum = daysInMonth[i];
+                if (daysInMonth[i] < minSum) {
+                    minSum = daysInMonth[i];
+                }
+            }
+        }
+        System.out.println("Минимальная сумма затрат за месяц " + minSum + " рублей");
+        System.out.println("Максимальная сумма затрат за месяц " + maxSum + " рублей");
     }
 }
